@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html>
+
+
+
+
+
+
+
+
+
+<title>Online Examination Portal</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<style>
+body,h1,h2,h3,h4,h5,h6 
+	{
+	font-family: "Lato", sans-serif
+	}
+.w3-bar,h1,button
+	{
+	font-family: "Montserrat", sans-serif
+	}
+.fa-anchor,.fa-leanpub,.fa-email
+	{
+	font-size:200px
+	}
+
+	
+.btn {
+    width:60%;
+	height:20%;
+	border-radius:15px;
+      position:relative;
+     
+    color: white;
+	text-align:center;
+    padding:75px 75px ;
+    font-size: 25px;
+    cursor: pointer;
+}
+	
+	
+	
+	
+	
+	
+	
+.logo{
+
+width:10%;
+height:100px;
+margin-right:200%;
+margin-bottom:50px;
+margin-top:-50px;
+opacity:100%;
+}
+
+.w3-top
+{position: relative;
+}
+</style>
+
+
+
+<style>
+* {box-sizing:border-box}
+body {font-family: Verdana,sans-serif;margin:0;}
+.mySlides {display:none}
+
+
+.slideshow-container {
+  max-width: 100%; 
+  position: relative;
+  margin: auto;
+  }
+
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0px 3px 3px 0px;
+}
+
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+
+.text {
+  color:black;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: centre;
+  bottom: 8px;
+  width:100%;
+  text-align:center;
+}
+
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 50px;
+}
+
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: 0.4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: 0.4} 
+  to {opacity: 1}
+}
+
+
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+
+
+</style>
+
+
+
+<style>
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+    background-color: gray;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0 ;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: black;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+img.avatar {
+    width: 40%;
+    border-radius: 50%;
+}
+
+.container {
+
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: white;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: gray;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: gray;
+    cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+    from {-webkit-transform: scale(0)} 
+    to {-webkit-transform: scale(1)}
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+</style>
+
+
+
+
+
+<body>
+<h1 
+
+style="text-indent:5px;
+text-align:right;
+font-family:Times New Roman;
+font-weight:bold;
+text-decoration:underline;
+margin-top:2px;
+margin-right:2px;
+padding-top:10px;
+padding-right:20px;
+background-color:gray;
+
+font-size:60px;">
+
+
+
+Online Examination Portal
+<div class="hello"
+style="font-size:30px";>
+[ ZHCET ,Aligarh Muslim University ]<br/>
+Aligarh-202002
+</div>
+<div class="logo">
+<img src="http://localhost/OEP/logo.png" style=" background-color:gray;width:190px;height:realtive;margin-left:120px;margin-bottom:50px;margin-top:-130px;opacity:.4" >
+</div>
+
+
+
+</h1>
+
+
+
+
+
+
+
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-grey w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+	<a href="#about" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">About</a>
+ 
+    <a href="http://localhost/quiz/admin.php" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white" target="blank">Admin login</a>
+    <a href="#portal" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Exams</a>
+    <a href="#our team" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Developers/Team</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
+  </div>
+</div>
+
+<!---slide show---->
+
+<div class="slideshow-container"><p></p>
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="http://localhost/OEP/1.jpg" style="width:100%">
+  <div class="text">ZHCET Mosque</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="http://localhost/OEP/2.jpg" style="width:100%">
+  <div class="text">Jama Masjid,AMU</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="http://localhost/OEP/3.jpg" style="width:100%">
+  <div class="text">ZHCET,AMU</div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+<a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+  
+  
+  
+  <p>  </p>
+  
+  <script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+
+  
+  
+  <!-- First Grid -->
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content" id="about">
+    <div class="w3-twothird">
+      <h2>Welcome to our Portal!</h2>
+      <h5 class="w3-padding-32"> Online Exam portal is basically developed for conducting AMU entrane exams online in 
+different parts of India at different major centres.</h5>
+
+      <p class="w3-text-grey"><ul>
+        <li><h5>Students should fill the application form till the scheduled last date.</h5></li>
+        <li><h5>Only those applicant who are approved by university can only access the exams on respective dates.</h5></li>
+      <li><h5>Many more facilities are provided,viz.mock tests,previous yr papers,results etc.</h5></li></ul>
+	  </p>
+       
+    </div>
+
+    <div class="w3-third w3-center"> 
+      <i class="fa fa-leanpub w3-padding-64 w3-text-black"></i>
+    </div>
+  </div>
+</div>
+
+<!-- Second Grid -->
+
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container" id = "portal">
+  <div class="w3-content" id = "portal">
+   <div class="w3-twothird" id= "portal">
+    <h2>Portal</h2>
+     <!--<h5 class="w3-padding-32"></h5>-->
+     <p class="w3-text-grey"> 
+
+     <ul><ol><h5>
+
+
+<p><button class="btn w3-button w3-grey"><a href="http://localhost/quiz/login2.php" target="blank" >Exams Ongoing</a></button>
+</p>
+<p><button class="btn w3-button w3-grey"><a href="http://localhost/quiz/result.php"target="blank">Results</a></button>
+</p>
+<p><button class="btn w3-button w3-grey"><a href="http://localhost/OEP/ques.html"target="blank">Prev yr.ques</a></button>
+</p>
+<p><button class="btn w3-button w3-grey"><a href="https://www.tcyonline.com/tests/entrance-exam">Mock tests</a></button>
+</p>
+<p><button class="btn w3-button w3-grey"><a href="https://www.sarvgyan.com/articles/amu-exam-dates"target="blank">Exam dates</a></button>
+</p>
+
+
+
+
+
+     
+     </h5></ol></ul>
+
+
+     </p>
+    </div>
+</div>
+</div>
+<div class="w3-display-container w3-black w3-center w3-opacity" style="height:300px;" id = "our team">
+<div class-"cont">
+      <div id="team">
+        <div class="w3-padding w3-display-topmiddle">
+	  <h2>OUR TEAM</h2>
+	  <p>
+      Meet the team:</p>
+	 </div>
+
+
+
+    <div class="w3-row ">
+	
+
+    <div class="w3-half">
+	<div class="w3-padding-large w3-right-align w3-margin-right w3-display-bottomright">
+      <img style="width:10%" src=" "  class="w3-circle w3-hover-opacity"> <br/>
+      
+	  <h2>MAAZ ABDULLAH</h2>
+      <h4>Backend developer</h4>
+    </div>
+</div>
+    <div class="w3-half">
+	<div class="w3-padding-large w3-left-align w3-margin-left w3-display-bottomleft">
+      <img src=" " style="width:10%" class="w3-circle w3-hover-opacity">
+      <h2>SAIMA SULTANA</h2>
+      <h4>Frontend developer</h4>
+    </div>
+	</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
+  
+  <a class="w3-button w3-large w3-black" href="javascript:void(0)" title="Facebook"><i class="fa fa-facebook"></i></a>
+  <a class="w3-button w3-large w3-black" href="javascript:void(0)" title="Google +"><i class="fa fa-google-plus"></i></a>
+  <a class="w3-button w3-large w3-black w3-hide-small" href="javascript:void(0)" title="Linkedin"><i class="fa fa-linkedin"></i></a>
+ 
+  <div style="position:relative;bottom:10px;z-index:1;" class="w3-tooltip w3-right">
+    <span class="w3-text w3-padding w3-teal w3-hide-small">Go To Top</span>   
+    <a class="w3-button w3-theme" href="#top"><span class="w3-xlarge">
+    <i class="fa fa-chevron-circle-up"></i></span></a>
+  </div>
+</footer>
+
+
+
+
+
+
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
+
